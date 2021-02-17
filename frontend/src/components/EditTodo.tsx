@@ -8,6 +8,8 @@ interface props {
 function EditTodo({ todo }: props) {
   const [description, setDescription] = useState(todo.description);
 
+  const baseURL = "https://poodzia-pern-todo.herokuapp.com:4000";
+
   const updateDescription = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -15,7 +17,7 @@ function EditTodo({ todo }: props) {
 
     try {
       const body = { description };
-      await fetch(`http://localhost:4000/todos/${todo.todo_id}`, {
+      await fetch(`${baseURL}/todos/${todo.todo_id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

@@ -4,10 +4,11 @@ import Todo from "../interfaces/Todo";
 
 const ListTodo = () => {
   const [todos, setTodos] = useState([]);
+  const baseURL = "https://poodzia-pern-todo.herokuapp.com:4000";
 
   const deleteTodo = async (id: number) => {
     try {
-      await fetch(`http://localhost:4000/todos/${id}`, {
+      await fetch(`${baseURL}/todos/${id}`, {
         method: "DELETE",
       });
 
@@ -19,7 +20,7 @@ const ListTodo = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:4000/todos");
+      const response = await fetch(`${baseURL}/todos`);
       const jsonData = await response.json();
       setTodos(jsonData);
     } catch (error) {

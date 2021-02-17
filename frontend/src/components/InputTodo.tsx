@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 
 const InputTodo = () => {
   const [description, setDescription] = useState("");
+  const baseURL = "https://poodzia-pern-todo.herokuapp.com:4000";
 
   const submitHandler = async (e: any) => {
     e.preventDefault();
@@ -9,7 +10,7 @@ const InputTodo = () => {
     try {
       const body = { description };
 
-      await fetch("http://localhost:4000/todos", {
+      await fetch(`${baseURL}/todos`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
