@@ -10,7 +10,8 @@ const Todo = require("./routes/Todo");
 app.use(cors_1.default());
 app.use(express_1.default.json());
 app.use("/todos", Todo);
-app.listen(4000, () => {
-    console.log("server started on port 4000");
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
 });
 //# sourceMappingURL=index.js.map
