@@ -12,6 +12,8 @@ app.use(express.json());
 // Routes
 app.use("/todos", Todo);
 
-app.listen(4000, () => {
-  console.log("server started on port 4000");
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
 });
