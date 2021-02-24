@@ -4,7 +4,8 @@ import Todo from "../interfaces/Todo";
 
 const ListTodo = () => {
   const [todos, setTodos] = useState([]);
-  const baseURL = "https://poodzia-pern-todo.herokuapp.com:4000";
+
+  const baseURL = "https://poodzia-pern-todo.herokuapp.com/";
 
   const deleteTodo = async (id: number) => {
     try {

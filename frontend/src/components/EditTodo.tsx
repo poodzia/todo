@@ -8,7 +8,7 @@ interface props {
 function EditTodo({ todo }: props) {
   const [description, setDescription] = useState(todo.description);
 
-  const baseURL = "https://poodzia-pern-todo.herokuapp.com:4000";
+  const baseURL = "https://poodzia-pern-todo.herokuapp.com";
 
   const updateDescription = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>

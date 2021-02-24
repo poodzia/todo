@@ -1,8 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 const InputTodo = () => {
   const [description, setDescription] = useState("");
-  const baseURL = "https://poodzia-pern-todo.herokuapp.com:4000";
+
+  const baseURL = "https://poodzia-pern-todo.herokuapp.com";
 
   const submitHandler = async (e: any) => {
     e.preventDefault();
